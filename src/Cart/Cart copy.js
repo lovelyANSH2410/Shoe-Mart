@@ -16,7 +16,7 @@ const Cart = (props) => {
         <ul>
           {cartContext.items.map((item) => (
             <CartItem
-              key={`${item.id}-${item.size}`} // Use unique key for each item
+              key={`${item.id}-${item.size}`}
               name={item.name}
               price={item.price}
               image={item.image}

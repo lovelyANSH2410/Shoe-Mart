@@ -1,8 +1,8 @@
 .cart-item {
     display: flex;
+    padding: 5px;
     flex-direction: row;
-    width: 70%;
-    margin: auto;
+    width: 100%;
     justify-content: space-evenly;
     font-size: x-large;
 }
@@ -10,8 +10,13 @@
 .cart-list {
     display: flex;
     width: 80%;
-    border: .5px black solid;
     margin: auto;
+    border: .5px black solid;
     margin-bottom: 5px;
     padding: 10px;
+}
+
+.cart-item-img {
+    width: 30px;
+    height: 30px;
 }

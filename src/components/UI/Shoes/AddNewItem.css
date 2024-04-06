@@ -1,0 +1,20 @@
+.toggle-btn {
+    margin-left: 210px;
+}
+
+.input-form {
+    margin-left: 210px;
+}
+
+input {
+    height: 50px;
+    width: 300px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: larger;
+    padding: 5px;
+}
+
+.input-btn {
+    height: 60px;
+}

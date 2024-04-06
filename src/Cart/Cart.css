@@ -1,11 +1,9 @@
 .cart {
-    font-size: x-large;
-    justify-content: center;
     text-align: center;
-    width: 50%;
-    margin: auto;
+    font-size: x-large;
+    margin: 10px;
     border: black solid;
-    padding: 20px;
+    padding: 10px;
 }
 
 .cart-btn {

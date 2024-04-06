@@ -4,45 +4,27 @@ import CartContext from "../../../Cart/CartContext";
 const ShoeItem = (props) => {
   const cartContext = useContext(CartContext);
 
-  const [large, setLarge] = useState(10);
-  const [medium, setMedium] = useState(10);
-  const [small, setSmall] = useState(10);
+  const [counts, setCounts] = useState({
+    Large: 10,
+    Medium: 10,
+    Small: 10
+  });
 
-  const largeDataHandler = () => {
-    cartContext.addItem({
-      id: props.id,
-      name: props.name,
-      price: props.price,
-      image: props.image,
-      size: "Large",
-      amount: 1,
-    });
-    if (large > 0) setLarge(large - 1);
-    else return;
-  };
-  const mediumDataHandler = () => {
-    cartContext.addItem({
-      id: props.id,
-      name: props.name,
-      price: props.price,
-      image: props.image,
-      size: "Medium",
-      amount: 1,
-    });
-    if (medium > 0) setMedium(medium - 1);
-    else return;
-  };
-  const smallDataHandler = () => {
-    cartContext.addItem({
-      id: props.id,
-      name: props.name,
-      price: props.price,
-      image: props.image,
-      size: "Small",
-      amount: 1,
-    });
-    if (small > 0) setSmall(small - 1);
-    else return;
+  const addToCartHandler = (size) => {
+    if (counts[size] > 0) {
+      cartContext.addItem({
+        id: props.id,
+        name: props.name,
+        price: props.price,
+        image: props.image,
+        size: size,
+        amount: 1
+      });
+      setCounts(prevCounts => ({
+        ...prevCounts,
+        [size]: prevCounts[size] - 1
+      }));
+    }
   };
 
   return (
@@ -54,15 +36,16 @@ const ShoeItem = (props) => {
           </p>
           <img className="img" src={props.image} alt="logo" />
           <p>100% Cotton</p>
-          <button className="add-btn" onClick={largeDataHandler}>
-            Add Large ({large})
-          </button>
-          <button className="add-btn" onClick={mediumDataHandler}>
-            Add Medium ({medium})
-          </button>
-          <button className="add-btn" onClick={smallDataHandler}>
-            Add Small ({small})
-          </button>
+          {props.size.map((size) => (
+            <button
+              className="add-btn"
+              key={size}
+              onClick={() => addToCartHandler(size)}
+              disabled={counts[size] === 0}
+            >
+              Add {size} ({counts[size]})
+            </button>
+          ))}
         </div>
       </ul>
     </div>
