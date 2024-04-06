@@ -1,0 +1,17 @@
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    justify-content: space-evenly;
+    font-size: x-large;
+}
+
+.cart-list {
+    display: flex;
+    width: 80%;
+    border: .5px black solid;
+    margin: auto;
+    margin-bottom: 5px;
+    padding: 10px;
+}
