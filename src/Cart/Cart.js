@@ -1,37 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CartContext from "./CartContext";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import Modal from "../components/UI/Modal";
 
 const Cart = (props) => {
-  const cartContext = useContext(CartContext);
-  const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
-  const hasItems = cartContext.items.length > 0;
+  const { cartItems, bill, setBill } = useContext(CartContext);
+
+  useEffect(() => {
+    const totalPrice = cartItems.reduce(
+      (acc, curr) => acc + curr.totalPrice,
+      0
+    );
+    setBill(totalPrice);
+    console.log(bill);
+  });
 
   return (
     <Modal onClose={props.onClose}>
-      <div className="cart">
-        <p>Total Amount : {totalAmount}</p>
-        <ul>
-          {cartContext.items.map((item) => (
-            <CartItem
-              key={`${item.id}-${item.size}`} // Use unique key for each item
-              name={item.name}
-              price={item.price}
-              image={item.image}
-              size={item.size}
-              amount={item.amount}
-            />
-          ))}
-        </ul>
-        <div>
-          {hasItems && <button className="cart-btn">Order</button>}
-          <button className="cart-btn" onClick={props.onClose}>
-            Close Cart
-          </button>
-        </div>
-      </div>
+      <CartItem />
     </Modal>
   );
 };

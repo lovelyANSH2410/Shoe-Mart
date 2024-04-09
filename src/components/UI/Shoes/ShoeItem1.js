@@ -46,7 +46,7 @@ const ShoeItem = () => {
                 }
               : item)
         );
-        setCartItems(updatedCartItems);
+        setCartItems([...cartItems, updatedCartItems]);
       }
 
       let flag = false;
@@ -70,121 +70,8 @@ const ShoeItem = () => {
     }
   };
 
-  const handleMedium = (obj) => {
-    if (obj.quantityAvailable.Medium > 0) {
-      obj.quantityAvailable.Medium = obj.quantityAvailable.Medium - 1;
-      obj.selected.Medium = obj.selected.Medium + 1;
-      obj.totalPrice =
-        (obj.selected.Large + obj.selected.Medium + obj.selected.Small) *
-        parseInt(obj.price);
-
-      const updatedData = dataList.map(
-        (item) =>
-          (item.id = obj.id
-            ? {
-                ...item,
-                quantityAvailable: {
-                  ...item.quantityAvailable,
-                  Medium: obj.quantityAvailable.Medium,
-                },
-              }
-            : item)
-      );
-
-      setDataList(updatedData);
-
-      if (cartItems.length > 0) {
-        const updatedCartItems = cartItems.map(
-          (item) =>
-            (item.id = obj.id
-              ? {
-                  ...item,
-                  selected: { ...item.selected, size: obj.selected.Medium },
-                  totalPrice: obj.totalPrice,
-                }
-              : item)
-        );
-        setCartItems(updatedCartItems);
-      }
-
-      let flag = false;
-
-      for (let i = 0; i < cartItems.length; i++) {
-        if (cartItems.length === 0) {
-          setCartItems([obj]);
-          flag = true;
-          break;
-        }
-
-        if (cartItems[i].id === obj.id) {
-          flag = true;
-        }
-      }
-
-      if (flag === false) {
-        setCartItems([...cartItems, obj]);
-      }
-      setCartCount(cartCount + 1);
-    }
-  };
-
-  const handleSmall = (obj) => {
-    if (obj.quantityAvailable.Small > 0) {
-      obj.quantityAvailable.Small = obj.quantityAvailable.Small - 1;
-      obj.selected.Small = obj.selected.Small + 1;
-      obj.totalPrice =
-        (obj.selected.Large + obj.selected.Medium + obj.selected.Small) *
-        parseInt(obj.price);
-
-      const updatedData = dataList.map(
-        (item) =>
-          (item.id = obj.id
-            ? {
-                ...item,
-                quantityAvailable: {
-                  ...item.quantityAvailable,
-                  Small: obj.quantityAvailable.Small,
-                },
-              }
-            : item)
-      );
-
-      setDataList(updatedData);
-
-      if (cartItems.length > 0) {
-        const updatedCartItems = cartItems.map(
-          (item) =>
-            (item.id = obj.id
-              ? {
-                  ...item,
-                  selected: { ...item.selected, size: obj.selected.Small },
-                  totalPrice: obj.totalPrice,
-                }
-              : item)
-        );
-        setCartItems(updatedCartItems);
-      }
-
-      let flag = false;
-
-      for (let i = 0; i < cartItems.length; i++) {
-        if (cartItems.length === 0) {
-          setCartItems([obj]);
-          flag = true;
-          break;
-        }
-
-        if (cartItems[i].id === obj.id) {
-          flag = true;
-        }
-      }
-
-      if (flag === false) {
-        setCartItems([...cartItems, obj]);
-      }
-      setCartCount(cartCount + 1);
-    }
-  };
+  const handleMedium = () => {};
+  const handleSmall = () => {};
 
   return (
     <div>

@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
 import CartContext from "./CartContext";
-import { data } from "../constants";
 
 const CartProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
