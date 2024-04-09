@@ -3,10 +3,7 @@ import "./Header.css";
 import CartContext from "../../Cart/CartContext";
 
 const Header = (props) => {
-  const cartContext = useContext(CartContext);
-  const numberOfCartItems = cartContext.items.reduce((currNum, item) => {
-    return currNum + item.amount;
-  }, 0);
+  const { cartCount } = useContext(CartContext);
 
   const handleClick = () => {
     props.onShowCart();
@@ -20,7 +17,7 @@ const Header = (props) => {
         <li className="header-option">About Us👤</li>
         <li className="header-option">Contact us📞</li>
         <button className="header-option" onClick={handleClick}>
-          Cart🛒{numberOfCartItems}
+          Cart🛒{cartCount}
         </button>
       </ul>
     </div>

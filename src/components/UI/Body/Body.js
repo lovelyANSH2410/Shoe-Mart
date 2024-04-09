@@ -4,7 +4,7 @@ import AvailableShoes from "../Shoes/AvailableShoes";
 
 const Body = () => {
   return (
-    <div>
+    <div className="body-comp">
       <h2>Items</h2>
       <AvailableShoes />
     </div>
