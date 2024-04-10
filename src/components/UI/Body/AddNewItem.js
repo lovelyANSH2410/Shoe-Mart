@@ -55,7 +55,6 @@ const AddNewItem = () => {
     }
 
     setDataList([...dataList, newItemData]);
-    console.log(dataList);
     setIsAddingItem(false);
     setNewItemData({
       image: "",

@@ -5,7 +5,7 @@ import "./Cart.css";
 import Modal from "../components/UI/Modal";
 
 const Cart = (props) => {
-  const { cartItems, bill, setBill } = useContext(CartContext);
+  const { cartItems, setBill } = useContext(CartContext);
 
   useEffect(() => {
     const totalPrice = cartItems.reduce(
