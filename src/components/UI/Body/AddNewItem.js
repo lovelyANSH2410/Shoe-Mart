@@ -8,7 +8,7 @@ const AddNewItem = () => {
   const [newItemData, setNewItemData] = useState({
     image: "",
     name: "",
-    price: 0,
+    price: '',
     quantityAvailable: {
       Large: '',
       Medium: '',
@@ -77,8 +77,8 @@ const AddNewItem = () => {
   };
 
   return (
-    <div>
-      <button className="toggle-btn" onClick={handleToggle}>
+    <div className="add-item">
+      <button className="input-button" onClick={handleToggle}>
         {isAddingItem ? "Cancel" : "Add New Item"}
       </button>
       {isAddingItem && (
@@ -106,7 +106,7 @@ const AddNewItem = () => {
           />
           <div>
             <h3>Quantity</h3>
-            <div>
+            <div className="quantity">
               <input
                 type="number"
                 name="Large"

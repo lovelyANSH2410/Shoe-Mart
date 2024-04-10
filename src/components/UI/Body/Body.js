@@ -1,12 +1,14 @@
 import React from "react";
 import "./Body.css";
-import AvailableShoes from "../Shoes/AvailableShoes";
+import AddNewItem from "./AddNewItem";
+import ShowItem from "./ShowItem";
 
 const Body = () => {
   return (
     <div className="body-comp">
       <h2>Items</h2>
-      <AvailableShoes />
+      <AddNewItem />
+      <ShowItem />
     </div>
   );
 };

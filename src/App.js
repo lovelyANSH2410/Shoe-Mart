@@ -5,8 +5,6 @@ import CartProvider from "./Cart/CartProvider";
 import { useState } from "react";
 import Cart from "./Cart/Cart";
 
-
-
 function App() {
   const [cartShow, setCartShow] = useState(false);
 
@@ -23,6 +21,9 @@ function App() {
       {cartShow && <Cart onClose={closeCart} />}
       <Header onShowCart={openCart} />
       <Body />
+      <div className="footer-bottom">
+        <p>&copy; 2024 Shoe Mart. All rights reserved.</p>
+      </div>
     </CartProvider>
   );
 }

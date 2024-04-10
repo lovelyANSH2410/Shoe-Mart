@@ -1,0 +1,33 @@
+.toggle-btn {
+  margin: auto;
+}
+
+.input-form {
+  margin: auto
+}
+
+.quantity {
+  margin-bottom: 10px;
+}
+
+.add-item {
+  text-align: center;
+}
+
+.input-button{
+  background-color: rgb(170, 215, 255);
+  padding: 5px;
+  border: 2px solid rgb(0, 195, 255);
+  font-weight: 600;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  margin: 5px;
+  margin-top: 10px;
+  font-size: larger;
+  padding: 5px;
+}
+
+

@@ -9,7 +9,7 @@
 
 .cart-list {
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: auto;
     border: .5px black solid;
     margin-bottom: 5px;

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import "./ShoeItem.css";
+import "./ShowItem.css";
 import CartContext from "../../../Cart/CartContext";
 
-const ShoeItem = () => {
+const ShowItem = () => {
   const {
     dataList,
     setDataList,
@@ -22,7 +22,7 @@ const ShoeItem = () => {
 
       const updatedData = dataList.map(
         (item) =>
-          (item.id = obj.id
+          (item.id === obj.id
             ? {
                 ...item,
                 quantityAvailable: {
@@ -38,10 +38,10 @@ const ShoeItem = () => {
       if (cartItems.length > 0) {
         const updatedCartItems = cartItems.map(
           (item) =>
-            (item.id = obj.id
+            (item.id === obj.id
               ? {
                   ...item,
-                  selected: { ...item.selected, size: obj.selected.Large },
+                  selected: { ...item.selected, Large: obj.selected.Large },
                   totalPrice: obj.totalPrice,
                 }
               : item)
@@ -80,7 +80,7 @@ const ShoeItem = () => {
 
       const updatedData = dataList.map(
         (item) =>
-          (item.id = obj.id
+          (item.id === obj.id
             ? {
                 ...item,
                 quantityAvailable: {
@@ -96,10 +96,10 @@ const ShoeItem = () => {
       if (cartItems.length > 0) {
         const updatedCartItems = cartItems.map(
           (item) =>
-            (item.id = obj.id
+            (item.id === obj.id
               ? {
                   ...item,
-                  selected: { ...item.selected, size: obj.selected.Medium },
+                  selected: { ...item.selected, Medium: obj.selected.Medium },
                   totalPrice: obj.totalPrice,
                 }
               : item)
@@ -138,7 +138,7 @@ const ShoeItem = () => {
 
       const updatedData = dataList.map(
         (item) =>
-          (item.id = obj.id
+          (item.id === obj.id
             ? {
                 ...item,
                 quantityAvailable: {
@@ -154,10 +154,10 @@ const ShoeItem = () => {
       if (cartItems.length > 0) {
         const updatedCartItems = cartItems.map(
           (item) =>
-            (item.id = obj.id
+            (item.id === obj.id
               ? {
                   ...item,
-                  selected: { ...item.selected, size: obj.selected.Small },
+                  selected: { ...item.selected, Small: obj.selected.Small },
                   totalPrice: obj.totalPrice,
                 }
               : item)
@@ -184,10 +184,9 @@ const ShoeItem = () => {
       }
       setCartCount(cartCount + 1);
     }
-  };
+  };  
 
   return (
-    <div>
       <ul className="items">
         {dataList.length === 0 ? (
           <h2>Sorry No products are available at the moment!</h2>
@@ -225,8 +224,7 @@ const ShoeItem = () => {
           })
         )}
       </ul>
-    </div>
   );
 };
 
-export default ShoeItem;
+export default ShowItem;
