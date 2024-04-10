@@ -6,7 +6,7 @@ const CartItem = () => {
   const { cartItems, setCartItems, bill } = useContext(CartContext);
 
   return (
-    <ul>
+    <div className="cart-div">
       <h1>Cart</h1>
       {cartItems.map((item, index) => (
         <li className="cart-list" key={index}>
@@ -30,9 +30,9 @@ const CartItem = () => {
       <div>
         <h2>Total: {bill}</h2>
       </div>
-      <button onClick={() => {setCartItems([])}}>Clear Cart</button>
-      <button onClick={() => {alert('Order Successful')}}>Order</button>
-    </ul>
+      <button className="cart-btn" onClick={() => {setCartItems([])}}>Clear Cart</button>
+      <button className="cart-btn" onClick={() => {alert('Order Successful')}}>Order</button>
+    </div>
   );
 };
 

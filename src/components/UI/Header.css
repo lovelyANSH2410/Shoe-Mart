@@ -28,5 +28,6 @@ h1 {
 button {
     cursor: pointer;
     width: 100px;
+    font-weight: 600;
     font-size: large;
 }

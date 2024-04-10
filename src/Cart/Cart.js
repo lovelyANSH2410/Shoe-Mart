@@ -13,7 +13,6 @@ const Cart = (props) => {
       0
     );
     setBill(totalPrice);
-    console.log(bill);
   });
 
   return (

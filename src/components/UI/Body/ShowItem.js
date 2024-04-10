@@ -187,7 +187,7 @@ const ShowItem = () => {
   };  
 
   return (
-      <ul className="items">
+      <div className="items">
         {dataList.length === 0 ? (
           <h2>Sorry No products are available at the moment!</h2>
         ) : (
@@ -223,7 +223,7 @@ const ShowItem = () => {
             );
           })
         )}
-      </ul>
+      </div>
   );
 };
 
